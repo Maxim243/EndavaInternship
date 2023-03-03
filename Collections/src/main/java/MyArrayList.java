@@ -21,6 +21,7 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public boolean isEmpty() {
+        if (size == 0) return true;
         return false;
     }
 
@@ -71,6 +72,7 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public boolean containsAll(Collection<?> c) {
+
         return false;
     }
 
@@ -96,7 +98,10 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public void clear() {
-
+        for (int i = 0; i < objects.length; i++) {
+            objects[i] = null;
+        }
+        size = 0;
     }
 
     @Override
